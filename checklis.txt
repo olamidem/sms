@@ -1,0 +1,8 @@
+name of the app
+create 2 folders, public and private
+inside public folder, add index.php and .htaccess
+inside private folder, create a folder called core
+create a folder inside core,  autoload.php, database.php,config.php and app.php
+the app.php is the main application file.
+
+inside the core folder we will create a folder called controllers.
