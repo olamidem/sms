@@ -8,6 +8,7 @@
     <meta name="keywords" content="HTML, CSS, PHP, Javascript">
     <link rel="stylesheet" href="../public/src/output.css">
     <title>Home view</title>
+    <script></script>
 </head>
 
 <body>

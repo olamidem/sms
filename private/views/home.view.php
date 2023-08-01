@@ -1,5 +1,10 @@
 <?php $this->view('includes/header') ?>
+<?php $this->view('includes/nav') ?>
 
-<h1 class="bg-slate-500 text-center">Home view</h1>
+<?php
+echo "<pre>";
+print_r($rows);
+
+?>
 
 <?php $this->view('includes/footer') ?>
