@@ -45,25 +45,26 @@ class Model extends Database
 
     public function update($id, $data)
     {
-        $column = addslashes($column);
-        $query = "select * from {$this->table} where {$column} = :value";
-        return $this->query(
-            $query,
-            [
-                'value' => $value
-            ]
-        );
+
+        $str = "";
+
+        foreach ($data as $key => $value) {
+            # code...
+            $str .= $key . "=:" . $key . ",";
+        }
+        $str = trim($str, ",");
+        $data['id'] = $id;
+
+        $query = "update {$this->table} set $str where id = :id";
+
+        return $this->query($query, $data);
     }
 
     public function delete($id)
     {
-        $column = addslashes($column);
-        $query = "select * from {$this->table} where {$column} = :value";
-        return $this->query(
-            $query,
-            [
-                'value' => $value
-            ]
-        );
+
+        $query = "delete from {$this->table} where id = :id";
+        $data['id'] = $id;
+        return $this->query($query, $data);
     }
 }
