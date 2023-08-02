@@ -1,10 +1,10 @@
-<nav class="bg-gray-800">
+<nav class="bg-indigo-600">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button"
-                    class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
@@ -39,11 +39,11 @@
                         <a href="../public" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">Dashboard</a>
                         <a href="../public/users"
-                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">USERS</a>
+                            class="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">USERS</a>
                         <a href="../public/classes"
-                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CLASSES</a>
+                            class="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CLASSES</a>
                         <a href="../public/tests"
-                            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">TESTS</a>
+                            class="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">TESTS</a>
                     </div>
                 </div>
             </div>
@@ -74,12 +74,15 @@
                     <div class="md:hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="../public/profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                            tabindex="-1" id="user-menu-item-0">Profile</a>
-                        <a href="../public" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                            id="user-menu-item-1">Dashboard</a>
-                        <a href="../public/logout" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                            tabindex="-1" id="user-menu-item-2">Logout</a>
+                        <a href="../public/profile"
+                            class="block px-4 py-2 text-sm text-gray-700   hover:bg-gray-700 hover:text-white"
+                            role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
+                        <a href="../public"
+                            class="block px-4 py-2 text-sm text-gray-700   hover:bg-gray-700 hover:text-white"
+                            role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard</a>
+                        <a href="../public/logout"
+                            class="block px-4 py-2 text-sm text-gray-700   hover:bg-gray-700 hover:text-white"
+                            role="menuitem" tabindex="-1" id="user-menu-item-2">Logout</a>
                     </div>
                 </div>
             </div>

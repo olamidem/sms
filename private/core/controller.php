@@ -4,6 +4,10 @@
 
 class Controller
 {
+    public function __construct()
+    {
+
+    }
     public function view($view, $data = array())
     {
         extract($data);
@@ -15,6 +19,17 @@ class Controller
         } else {
             require("../private/views/404.view.php");
         }
+    }
+
+    public function load_model($model)
+    {
+        if (file_exists("../private/models/" . ucfirst($model) . ".php")) {
+            # code...
+            require("../private/models/" . ucfirst($model) . ".php");
+            return $model = new Model();
+        }
+
+        return false;
     }
 
 

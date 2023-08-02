@@ -66,17 +66,19 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg> Tests </button>
-            <form action="">
-                <div class="p-4 rounded bg-white text-indigo-500 shadow-md flex md:flex-row">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search"
-                        placeholder="Search something.." />
-                </div>
-            </form>
+            <div>
+                <form action="">
+                    <div class="p-4 rounded bg-white text-indigo-500 shadow-md flex md:flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text"
+                            id="search" placeholder="Search something.." />
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="shadow-xl border border-gray-100 font-light p-8 rounded text-gray-500 bg-white mt-6"> Raw denim you
             You're using 12.90 GB (86%) of the 15 GB of storage available in your Google Account, which means that
@@ -85,6 +87,8 @@
             Google One membership. Plans start at ₦390.00 a month.
         </div>
     </div>
+
+
 
     <!-- <div class="flex flex-col md:flex-row gap-5 justify-center">
         <button class="text-white p-4 rounded bg-indigo-500 shadow-md flex items-center justify-center">
@@ -129,4 +133,6 @@
     </div> -->
 
 </div>
+
+
 <?php $this->view('includes/footer') ?>

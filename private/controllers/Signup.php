@@ -3,7 +3,7 @@
 // Login Controller
 class Signup extends Controller
 {
-    function index()
+    function index($id = null)
     {
         //code...
         $this->view('signup');

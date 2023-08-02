@@ -3,7 +3,7 @@
 // Profile Controller
 class Profile extends Controller
 {
-    function index()
+    function index($id = null)
     {
         //code...
         $this->view('profile');

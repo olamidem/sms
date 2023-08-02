@@ -6,8 +6,8 @@ class Database
     private function connect()
     {
         //  Connect to  database
-        $string = "mysql:host=localhost;dbname=school_db";
-        if (!$con = new PDO($string, 'root', 'Nu66et')) {
+        $string = DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME;
+        if (!$con = new PDO($string, DBUSER, DBPASSWORD)) {
             # code...
             die("Could not connect to   database");
         }
