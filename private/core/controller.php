@@ -32,5 +32,13 @@ class Controller
         return false;
     }
 
+    public function redirect($link)
+    {
+
+        // header("Location:" . "../public/views/" . trim($link, '/'));
+        header("Location:" . "../public/" . trim($link, '/'));
+        die();
+    }
+
 
 }

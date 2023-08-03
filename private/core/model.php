@@ -3,6 +3,7 @@
 
 class Model extends Database
 {
+    public $errors = array();
     //protected $table = "users";
     function __construct()
     {
@@ -36,6 +37,26 @@ class Model extends Database
 
     public function insert($data)
     {
+        //remove unwanted columns
+        if (property_exists($this, "allowedColumns")) {
+            # code...
+            foreach ($data as $key => $column) {
+                if (!in_array($key, $this->allowedColumns)) {
+                    # code...
+                    unset($data[$key]);
+                }
+            }
+
+        }
+
+        //run function before inserting
+        if (property_exists($this, "beforeInsert")) {
+            # code...
+            foreach ($this->beforeInsert as $func) {
+                $data = $this->$func($data);
+            }
+        }
+
         $keys = array_keys($data);
         $columns = implode(',', $keys);
         $values = implode(',:', $keys);
