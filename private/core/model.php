@@ -1,20 +1,20 @@
 <?php
-//Main model class to read from the database
-
+// Main model class to read from the database
 class Model extends Database
 {
+    // Array to store validation errors
     public $errors = array();
-    //protected $table = "users";
+
+    // Constructor to set the default table name if not defined in the child class
     function __construct()
     {
-        //echo $this::class;
-        //code
         if (!property_exists($this, "table")) {
-            # code...
+            // If the table property is not defined in the child class, use the lowercase class name as the default table name with 's' suffix
             $this->table = strtolower(get_class($this)) . 's';
         }
     }
 
+    // Method to perform a database query with a WHERE clause
     public function where($column, $value)
     {
         $column = addslashes($column);
@@ -27,50 +27,47 @@ class Model extends Database
         );
     }
 
+    // Method to retrieve all records from the table
     public function findAll()
     {
-
         $query = "select * from {$this->table} ";
         return $this->query($query);
     }
 
-
+    // Method to insert data into the table
     public function insert($data)
     {
-        //remove unwanted columns
+        // Remove unwanted columns that are not allowed
         if (property_exists($this, "allowedColumns")) {
-            # code...
             foreach ($data as $key => $column) {
                 if (!in_array($key, $this->allowedColumns)) {
-                    # code...
                     unset($data[$key]);
                 }
             }
-
         }
 
-        //run function before inserting
+        // Run functions defined in the 'beforeInsert' property before inserting
         if (property_exists($this, "beforeInsert")) {
-            # code...
             foreach ($this->beforeInsert as $func) {
                 $data = $this->$func($data);
             }
         }
 
+        // Prepare the query for insertion
         $keys = array_keys($data);
         $columns = implode(',', $keys);
         $values = implode(',:', $keys);
         $query = "insert into {$this->table} ($columns) values (:$values)";
+
+        // Execute the insertion query with the data
         return $this->query($query, $data);
     }
 
+    // Method to update a record in the table
     public function update($id, $data)
     {
-
         $str = "";
-
         foreach ($data as $key => $value) {
-            # code...
             $str .= $key . "=:" . $key . ",";
         }
         $str = trim($str, ",");
@@ -81,9 +78,9 @@ class Model extends Database
         return $this->query($query, $data);
     }
 
+    // Method to delete a record from the table
     public function delete($id)
     {
-
         $query = "delete from {$this->table} where id = :id";
         $data['id'] = $id;
         return $this->query($query, $data);
