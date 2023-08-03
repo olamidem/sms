@@ -28,4 +28,32 @@ class Auth
         // Otherwise, the user is not logged in
         return false;
     }
+
+    // Method to retrieve the first name of the authenticated user from the session
+    public static function user()
+    {
+        if (isset($_SESSION['USER'])) {
+            // If the 'USER' session is set, return the first name of the user
+            return $_SESSION['USER']->firstname;
+        }
+
+        // If the user is not authenticated, return false
+        return false;
+    }
+
+    // Magic method to dynamically retrieve user properties using a get-method-like syntax
+    public static function __callStatic($method, $params)
+    {
+        // Extract the property name from the method name
+        $prop = strtolower(str_replace("get", '', $method));
+
+        if (isset($_SESSION['USER']->$prop)) {
+            // If the specified property exists in the 'USER' session, return its value
+            return $_SESSION['USER']->$prop;
+        }
+
+        // If the specified property does not exist, return "Unknown"
+        return "Unknown";
+    }
+
 }

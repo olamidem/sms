@@ -3,17 +3,22 @@
 // Home Controller
 class Home extends Controller
 {
+    // Method to handle the home page
     function index($id = null)
     {
-        //code...
+        // Check if the user is not logged in
         if (!Auth::logged_in()) {
-            # code...
+            // Redirect the user to the login page if not logged in
             $this->redirect('login');
         }
+
+        // Create a new instance of the User model
         $user = new User();
 
+        // Fetch all user data from the database
         $data = $user->findAll();
-        $this->view('home', ['rows' => $data]);
 
+        // Load the home view and pass the user data as an array to display on the page
+        $this->view('home', ['rows' => $data]);
     }
 }
