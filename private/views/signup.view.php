@@ -48,7 +48,7 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-                    id="grid-first-name" value="<?= get_var('firstname') ?>" name="firstname" type="text"
+                    id="grid-first-name" required value="<?= get_var('firstname') ?>" name="firstname" type="text"
                     placeholder="Ola">
             </div>
             <div class="md:w-1/2 px-3">
@@ -58,7 +58,7 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                    id="grid-last-name" type="text" value="<?= get_var('lastname') ?>" name="lastname"
+                    id="grid-last-name" type="text" required value="<?= get_var('lastname') ?>" name="lastname"
                     placeholder="Mide">
             </div>
         </div>
@@ -70,7 +70,7 @@
                     Gender
                 </label>
                 <div class="relative">
-                    <select name="gender" id="gender"
+                    <select name="gender" id="gender" required
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
                         id="grid-gender">
                         <option <?= get_select('gender', '') ?> value="">Select Gender</option>
@@ -85,7 +85,7 @@
                     Rank
                 </label>
                 <div class="relative">
-                    <select name="rank" id="rank"
+                    <select name="rank" id="rank" required
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
                         id="grid-rank">
                         <option <?= get_select('rank', '') ?> value="">Select Rank</option>
@@ -109,7 +109,7 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                    id="grid-password" type="email" value="<?= get_var('email') ?>" name="email"
+                    id="grid-password" required type="email" value="<?= get_var('email') ?>" name="email"
                     placeholder="email@mail.com">
             </div>
         </div>
@@ -122,7 +122,7 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-                    id="grid-password" type="text" name="password" placeholder="******************">
+                    id="grid-password" type="password" required name="password" placeholder="******************">
             </div>
             <div class="md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
@@ -131,7 +131,8 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                    id="grid-confirm-password" type="text" name="password2" placeholder="******************">
+                    id="grid-confirm-password" type="password" required name="password2"
+                    placeholder="******************">
             </div>
         </div>
         <div class="flex ">
