@@ -19,7 +19,7 @@
 
         <div class="w-full lg:w-6/6 overflow-x-auto">
             <div class="bg-white shadow-md rounded my-6">
-                <table class="min-w-max w-full table-auto">
+                <table class="min-w-max w-full table-auto overflow-auto">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">School</th>
