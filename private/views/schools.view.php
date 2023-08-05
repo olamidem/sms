@@ -64,6 +64,7 @@
                                             </div>
                                             <span class="uppercase">
                                                 <?= $row->user->firstname ?>
+                                                <?= $row->user->lastname ?>
                                             </span>
                                         </div>
                                     </td>

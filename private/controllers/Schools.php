@@ -54,4 +54,47 @@ class Schools extends Controller
             ['errors' => $errors]
         );
     }
+
+    public function edit($id = null)
+    {
+        // Check if the user is not logged in
+        if (!Auth::logged_in()) {
+            // Redirect the user to the login page if not logged in
+            $this->redirect('login');
+        }
+
+        $school = new School();
+        $errors = array();
+        if (count($_POST) > 0) {
+
+
+
+            if ($school->validate($_POST)) {
+
+                $school->update($id, $_POST);
+
+                $this->redirect('schools');
+            } else {
+
+                $errors = $school->errors;
+            }
+        }
+
+        $row = $school->where('id', $id);
+        // if (!$row) {
+        //     # code...
+        //     $row = (object) [];
+        //     $row->school = "";
+        // }
+
+        $this->view(
+            'schools.edit',
+            [
+                'row' => $row,
+                'errors' => $errors
+            ]
+        );
+    }
+
+
 }
