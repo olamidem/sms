@@ -44,7 +44,7 @@
                 </div>
             <?php endif; ?>
 
-            <div class="-mx-3 md:flex mb-6">
+            <div class="mx-3 md:flex mb-6">
                 <div class="md:w-full px-3">
                     <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                         for="school-name">
@@ -60,12 +60,14 @@
             <div class="flex ">
 
                 <button type="submit"
-                    class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-gray-700 bg-indigo-600  ">Create</button>
+                    class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-gray-700 bg-indigo-600  ">
+                    Create</button>
 
-                <a href="<?= ROOT ?>/schools">
-                    <button type="button"
-                        class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">CANCEL</button>
-                </a>
+
+                <button type="button"
+                    class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-red-600  "><a
+                        href="<?= ROOT ?>/schools">CANCEL</a></button>
+
             </div>
         </form>
     </div>

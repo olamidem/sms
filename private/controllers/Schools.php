@@ -39,10 +39,7 @@ class Schools extends Controller
 
                 $_POST['date'] = date("Y-m-d H:i:s");
 
-
                 $school->insert($_POST);
-
-
 
                 $this->redirect('schools');
             } else {
@@ -50,7 +47,6 @@ class Schools extends Controller
                 $errors = $school->errors;
             }
         }
-
 
         // Load the home view and pass the school data as an array to display on the page
         $this->view(
