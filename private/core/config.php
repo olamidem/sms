@@ -1,6 +1,6 @@
 <?php
 
-define('ROOT', '');
+define('ROOT', 'http://localhost/sms/public');
 
 define('DBHOST', 'localhost');
 define('DBNAME', 'school_db');

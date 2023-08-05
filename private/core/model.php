@@ -39,7 +39,7 @@ class Model extends Database
     {
         // Remove unwanted columns that are not allowed
         if (property_exists($this, "allowedColumns")) {
-            foreach ($data as $key => $column) {
+            foreach ($data as $key => $columns) {
                 if (!in_array($key, $this->allowedColumns)) {
                     unset($data[$key]);
                 }

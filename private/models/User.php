@@ -46,6 +46,10 @@ class User extends Model
         if (empty($DATA['email']) || !filter_var($DATA['email'], FILTER_VALIDATE_EMAIL)) {
             $this->errors['email'] = "Enter a valid email address";
         }
+        // Validate email: check if email already   exists
+        if ($this->where('email', $DATA['email'])) {
+            $this->errors['email'] = "The email address already exists";
+        }
 
         // Validate password: Should match with the password confirmation and be at least 8 characters long
         if (empty($DATA['password']) || $DATA['password'] != $DATA['password2']) {
@@ -79,7 +83,7 @@ class User extends Model
     // Generate a random user_id with the given length
     public function make_user_id($data)
     {
-        $data['user_id'] = $this->random_string(60);
+        $data['user_id'] = random_string(60);
         return $data;
     }
 
@@ -103,55 +107,4 @@ class User extends Model
         return $data;
     }
 
-    // Generate a random string with the given length
-    public function random_string($length)
-    {
-        $array = array(
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            'a',
-            'b',
-            'c',
-            'd',
-            'e',
-            'f',
-            'g',
-            'h',
-            'i',
-            'j',
-            'k',
-            'l',
-            'm',
-            'n',
-            'o',
-            'p',
-            'q',
-            'r',
-            's',
-            't',
-            'u',
-            'v',
-            'w',
-            'x',
-            'y',
-            'z'
-        );
-
-        $text = "";
-        $arrayLength = count($array);
-
-        for ($x = 0; $x < $length; $x++) {
-            $random = rand(0, $arrayLength - 1);
-            $text .= $array[$random];
-        }
-        return $text;
-    }
 }
