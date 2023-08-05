@@ -36,7 +36,7 @@ class Controller
     {
 
         // header("Location:" . "../public/views/" . trim($link, '/'));
-        header("Location:" . "ROOT/" . trim($link, '/'));
+        header("Location:" . ROOT ."/". trim($link, '/'));
         die();
     }
 

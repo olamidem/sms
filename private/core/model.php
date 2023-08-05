@@ -19,19 +19,48 @@ class Model extends Database
     {
         $column = addslashes($column);
         $query = "select * from {$this->table} where {$column} = :value";
-        return $this->query(
+        $data = $this->query(
             $query,
             [
                 'value' => $value
             ]
         );
+
+        //run function afterselect
+        if (is_array($data)) {
+            # code...
+            if (property_exists($this, "afterSelect")) {
+
+                foreach ($this->afterSelect as $func) {
+                    $data = $this->$func($data);
+                }
+            }
+        }
+
+
+        return $data;
     }
 
     // Method to retrieve all records from the table
     public function findAll()
     {
         $query = "select * from {$this->table} ";
-        return $this->query($query);
+        $data = $this->query($query);
+
+        //run function afterselect
+        if (is_array($data)) {
+            # code...
+            if (property_exists($this, "afterSelect")) {
+
+                foreach ($this->afterSelect as $func) {
+                    $data = $this->$func($data);
+                }
+            }
+        }
+
+
+        return $data;
+
     }
 
     // Method to insert data into the table

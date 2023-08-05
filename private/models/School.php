@@ -15,6 +15,11 @@ class School extends Model
         // Sets the school_id (with a default value if not provided)
 
     ];
+    protected $afterSelect = [
+        'get_user',
+
+
+    ];
 
     // Validate user data before insertion
     public function validate($DATA)
@@ -63,6 +68,21 @@ class School extends Model
         return $data;
 
     }
-    // Generate a random string with the given length
+
+    public function get_user($data)
+    {
+        $user = new User();
+        foreach ($data as $key => $row) {
+            # code...
+            $result = $user->where('user_id', $row->user_id);
+            $data[$key]->user = is_array($result) ? $result[0] : false;
+        }
+
+
+
+        return $data;
+
+    }
+
 
 }
