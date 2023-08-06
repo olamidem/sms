@@ -2,8 +2,6 @@
 <?php $this->view('includes/nav') ?>
 
 <div class="container mx-auto shadow-lg">
-    <?php $this->view('includes/breadcrumbs') ?>
-
 
 
     <div class="mx-auto max-w-screen-md px-4 py- sm:px-6 lg:px-10">
@@ -46,29 +44,26 @@
                     </div>
                 <?php endif; ?>
 
-                <div class="-mx-3 md:flex mb-6">
+                <div class="-mx-3 md:flex mb-6 mt-5">
                     <div class="md:w-full px-3">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                            for="edit-school">
-                            School Name
-                        </label>
+
                         <input
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                            id="edit-school" type="text" value="<?= get_var('school', $row[0]->school) ?>" type="text"
-                            name="school" placeholder="Enter School Name">
+                            class="appearance-none block w-full bg-grey-lighter  text-grey-darker font-bold text-lg border border-grey-lighter rounded py-3 px-4 mb-3"
+                            id="edit-school" type="text" value="<?= get_var('school', $row[0]->school) ?>" name="school"
+                            placeholder="Enter School Name">
                     </div>
                 </div>
 
-                <div class="flex ">
+                <div class="flex justify-center space-x-4">
+                    <a href="<?= ROOT ?>/schools">
+                        <input type="submit" value="Save"
+                            class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-gray-700 bg-indigo-600  " />
+                    </a>
 
-                    <button type="submit"
-                        class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-gray-700 bg-indigo-600  ">
-                        <a href="<?= ROOT ?>/schools">Save</a></button>
-
-
-                    <button type="button"
-                        class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-red-600  "><a
-                            href="<?= ROOT ?>/schools">CANCEL</a></button>
+                    <a href="<?= ROOT ?>/schools">
+                        <input type="button" value="Cancel"
+                            class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-red-600  " />
+                    </a>
 
                 </div>
             </form>

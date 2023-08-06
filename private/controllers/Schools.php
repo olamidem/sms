@@ -96,5 +96,34 @@ class Schools extends Controller
         );
     }
 
+    public function delete($id = null)
+    {
+        // Check if the user is not logged in
+        if (!Auth::logged_in()) {
+            // Redirect the user to the login page if not logged in
+            $this->redirect('login');
+        }
+
+        $school = new School();
+
+        if (count($_POST) > 0) {
+
+            $school->delete($id);
+
+            $this->redirect('schools');
+
+        }
+
+        $row = $school->where('id', $id);
+
+
+        $this->view(
+            'schools.delete',
+            [
+                'row' => $row
+            ]
+        );
+    }
+
 
 }

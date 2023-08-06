@@ -2,7 +2,6 @@
 <?php $this->view('includes/nav') ?>
 
 <div class="container mx-auto shadow-lg">
-    <?php $this->view('includes/breadcrumbs') ?>
 
     <div class="mx-auto max-w-screen-md px-4 py- sm:px-6 lg:px-10">
 
@@ -45,13 +44,10 @@
             <?php endif; ?>
 
             <div class="mx-3 md:flex mb-6">
-                <div class="md:w-full px-3">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                        for="school-name">
-                        School Name
-                    </label>
+                <div class="md:w-full px-3 mt-6">
+
                     <input autofocus type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker font-bold text-lg border border-grey-lighter rounded py-3 px-4 mb-3"
                         id="school-name" required="<?= get_var('school') ?>" name="school"
                         placeholder="Enter School Name...">
                 </div>

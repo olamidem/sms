@@ -43,5 +43,6 @@ class App
 
         return explode("/", filter_var(trim($url, "/")), FILTER_SANITIZE_URL);
 
+
     }
 }

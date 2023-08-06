@@ -1,24 +1,34 @@
 <?php $this->view('includes/header') ?>
 <?php $this->view('includes/nav') ?>
 
-<div class="container mx-auto shadow-lg">
-    <?php $this->view('includes/breadcrumbs') ?>
+<div class="container mx-auto shadow-lg max-w-7xl px-2 sm:px-6 lg:px-8">
     <!-- component -->
-    <div class="sm:flex items-center justify-between sm:flex-wrap">
+    <div class="sm:flex items-center justify-between sm:flex-wrap mt-5">
 
 
         <a href="<?= ROOT ?>/schools/add">
             <button
-                class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-gray-700 focus:outline-none rounded">
-                <p class="text-sm font-medium leading-none text-white">Add New</p>
+                class="focus:ring-2 shadow-2xl focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-gray-700 focus:outline-none rounded">
+                <p class="text-sm font-medium leading-none text-white">Add New School</p>
             </button>
         </a>
+        <form action="">
+            <div class="p-4 rounded bg-white text-indigo-500 shadow-xl flex md:flex-row">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search"
+                    placeholder="Search something.." />
+            </div>
+        </form>
     </div>
 
     <div class="  flex justify-center bg-white font-sans overflow-hidden">
 
         <div class="w-full lg:w-6/6 overflow-x-auto">
-            <div class="bg-white shadow-md rounded my-6">
+            <div class="bg-white rounded my-6">
                 <table class="min-w-max w-full table-auto overflow-auto">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
