@@ -38,6 +38,8 @@ class Database
                     return $data;
                 }
 
+                return true;
+
             }
         }
 
