@@ -51,9 +51,8 @@ class School extends Model
         if (isset($_SESSION['USER']->user_id)) {
             $data['user_id'] = $_SESSION['USER']->user_id;
         } else {
-            // Set a default value for school_id here or throw an error, depending on your application logic.
-            // For example:
-            $data['school_id'] = 0; // Assuming 0 is a default value or some other meaningful value.
+
+            $data['school_id'] = 0;
         }
 
         return $data;

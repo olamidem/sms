@@ -2,13 +2,33 @@
 <?php $this->view('includes/nav') ?>
 
 <div class="container mx-auto shadow-lg">
-    <?php $this->view('includes/breadcrumbs') ?>
+    <div class="sm:flex items-center justify-between sm:flex-wrap mt-5">
 
-    <div class="flex flex-col md:flex-row gap-3 flex-wrap">
+
+        <a href="<?= ROOT ?>/signup">
+            <button
+                class="focus:ring-2 shadow-xl focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-gray-700 focus:outline-none rounded">
+                <p class="text-sm font-medium leading-none text-white">Add User</p>
+            </button>
+        </a>
+        <form action="">
+            <div class="p-4 rounded bg-white text-indigo-500 shadow-xl flex md:flex-row">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search"
+                    placeholder="Search something.." />
+            </div>
+        </form>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-3 flex-wrap items-center justify-center">
 
         <?php if ($rows): ?>
             <?php foreach ($rows as $row): ?>
-                <div class="mb-4 w-full md:w-48 max-w-sm mx-auto shadow-md border border-gray-200 rounded-lg dark:bg-gray-200 ">
+                <div class="mb-4 w-48 max-w-auto shadow-md border border-gray-200 rounded-lg dark:bg-gray-200 ">
                     <div class=" h-28 w-full checker-bg flex items-center justify-center p-4 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
@@ -30,7 +50,7 @@
 
                         <a href="#"
                             class="mt-2 text-white bg-blue-700 hover:bg-gray-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
+                            Profile
                             <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -43,7 +63,7 @@
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <h4>No user were found at this time</h4>
+            <h4 class="font-bold mb-4">No staff member were found at this time</h4>
         <?php endif; ?>
 
     </div>

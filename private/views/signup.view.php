@@ -93,7 +93,10 @@
                         <option <?= get_select('rank', 'reception') ?> value="reception">Reception</option>
                         <option <?= get_select('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
                         <option <?= get_select('rank', 'admin') ?> value="admin">Admin</option>
-                        <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
+
+                        <?php if (Auth::getRank() == 'super_admin'): ?>
+                            <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
+                        <?php endif; ?>
                     </select>
 
                 </div>
@@ -141,9 +144,10 @@
                 class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-indigo-500 bg-indigo-600  ">ADD
                 USER</button>
 
-            <button type="button"
-                class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">CANCEL</button>
-
+            <a href="<?= ROOT ?>/users"
+                class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">
+                <button type="button">CANCEL</button>
+            </a>
         </div>
     </form>
 </div>

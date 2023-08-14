@@ -23,7 +23,7 @@ class Signup extends Controller
                 $user->insert($_POST);
 
                 // Redirect the user to the login page after successful registration
-                $this->redirect('login');
+                $this->redirect('users');
             } else {
                 // Validation failed, get the errors array from the User model
                 $errors = $user->errors;

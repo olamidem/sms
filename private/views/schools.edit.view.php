@@ -75,13 +75,14 @@
                 </h1>
                 <button type="button"
                     class=" px-6 py-2 mt-5 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-red-600  "><a
-                        href="<?= ROOT ?>/schools">CANCEL</a></button><br><br><b </div>
-                <?php endif ?>
-        </div>
-
-
-
-
+                        href="<?= ROOT ?>/schools">CANCEL</a></button><br><br>
+            </div>
+        <?php endif ?>
     </div>
 
-    <?php $this->view('includes/footer') ?>
+
+
+
+</div>
+
+<?php $this->view('includes/footer') ?>

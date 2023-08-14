@@ -15,8 +15,8 @@ class Users extends Controller
         // Create a new instance of the User model
         $user = new User();
 
-        // Fetch all user data from the database
-        $data = $user->findAll();
+        $school_id = Auth::getSchool_id();
+        $data = $user->query("Select * from users where school_id =:school_id  ", ['school_id' => $school_id]);
 
         // Load the home view and pass the user data as an array to display on the page
         $this->view('users', ['rows' => $data]);

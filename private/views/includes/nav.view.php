@@ -26,11 +26,15 @@
                 x-data="{ open: false }">
                 <div class="flex flex-shrink-0 items-center" @click="open = !open">
                     <img class="h-8 w-auto" src="<?= ROOT ?>/sc.png" alt="Your Company">
+                    <p class="uppercase font-extrabold text-white ml-3">
+                        <?= Auth::getSchool_name() ?>
+                    </p>
                 </div>
                 <div class="hidden sm:ml-6 md:block ">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="<?= ROOT ?>" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                        <a href="<?= ROOT ?>"
+                            class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium uppercase"
                             aria-current="page">Dashboard</a>
                         <a href="<?= ROOT ?>/schools"
                             class="text-white hover:bg-gray-700 hover:text-white rounded-md uppercase px-3 py-2 text-sm font-medium">schools</a>

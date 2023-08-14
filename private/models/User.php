@@ -47,9 +47,9 @@ class User extends Model
             $this->errors['email'] = "Enter a valid email address";
         }
         // Validate email: check if email already   exists
-        if ($this->where('email', $DATA['email'])) {
-            $this->errors['email'] = "The email address already exists";
-        }
+        // if ($this->where('email', $DATA['email'])) {
+        //     $this->errors['email'] = "The email address already exists";
+        // }
 
         // Validate password: Should match with the password confirmation and be at least 8 characters long
         if (empty($DATA['password']) || $DATA['password'] != $DATA['password2']) {
@@ -93,9 +93,8 @@ class User extends Model
         if (isset($_SESSION['USER']->school_id)) {
             $data['school_id'] = $_SESSION['USER']->school_id;
         } else {
-            // Set a default value for school_id here or throw an error, depending on your application logic.
-            // For example:
-            $data['school_id'] = 0; // Assuming 0 is a default value or some other meaningful value.
+
+            $data['school_id'] = 0;
         }
         return $data;
     }

@@ -834,10 +834,6 @@ video {
   max-width: 1440px;
 }
 
-.max-w-sm {
-  max-width: 24rem;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1541,10 +1537,6 @@ video {
 
   .md\:w-1\/2 {
     width: 50%;
-  }
-
-  .md\:w-48 {
-    width: 12rem;
   }
 
   .md\:w-full {
