@@ -41,6 +41,36 @@ class Model extends Database
         return $data;
     }
 
+    public function first($column, $value)
+    {
+        $column = addslashes($column);
+        $query = "select * from {$this->table} where {$column} = :value";
+        $data = $this->query(
+            $query,
+            [
+                'value' => $value
+            ]
+        );
+
+        //run function afterselect
+        if (is_array($data)) {
+            # code...
+            if (property_exists($this, "afterSelect")) {
+
+                foreach ($this->afterSelect as $func) {
+                    $data = $this->$func($data);
+                }
+            }
+        }
+
+        if (is_array($data)) {
+            # code...
+            $data = $data[0];
+        }
+
+        return $data;
+    }
+
     // Method to retrieve all records from the table
     public function findAll()
     {
@@ -62,6 +92,8 @@ class Model extends Database
         return $data;
 
     }
+
+
 
     // Method to insert data into the table
     public function insert($data)

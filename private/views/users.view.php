@@ -24,10 +24,12 @@
         </form>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-3 flex-wrap items-center justify-center">
+    <div class="flex flex-col md:flex-row gap-3 mt-4 flex-wrap items-center justify-center">
 
         <?php if ($rows): ?>
             <?php foreach ($rows as $row): ?>
+
+
                 <div class="mb-4 w-48 max-w-auto shadow-md border border-gray-200 rounded-lg dark:bg-gray-200 ">
                     <div class=" h-28 w-full checker-bg flex items-center justify-center p-4 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
@@ -44,11 +46,11 @@
                             </h1>
                         </div>
                         <span
-                            class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
-                            <?= str_replace("_", " ", $row->rank); ?>
+                            class="capitalize text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
+                            <?= str_replace("_", " ", $row->rank); ?><br />
                         </span>
 
-                        <a href="#"
+                        <a href="<?= ROOT ?>/profile/<?= $row->user_id ?>"
                             class="mt-2 text-white bg-blue-700 hover:bg-gray-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Profile
                             <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"

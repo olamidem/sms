@@ -78,3 +78,15 @@ function get_date($date)
 {
     return date("jS M, Y", strtotime($date));
 }
+
+function get_image($image)
+{
+
+    if ($image == 'male') {
+        $image = ROOT . '/male.png';
+    } else {
+        $image = ROOT . '/female.png';
+    }
+
+    return $image;
+}
