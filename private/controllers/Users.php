@@ -1,6 +1,6 @@
 <?php
 
-// Home Controller
+// User Controller
 class Users extends Controller
 {
     // Method to handle the home page
@@ -16,9 +16,11 @@ class Users extends Controller
         $user = new User();
 
         $school_id = Auth::getSchool_id();
-        $data = $user->query("Select * from users where school_id =:school_id  ", ['school_id' => $school_id]);
+        $data = $user->query("Select * from users where school_id =:school_id && rank not in ('student') order by id desc ", ['school_id' => $school_id]);
 
         // Load the home view and pass the user data as an array to display on the page
-        $this->view('users', ['rows' => $data]);
+        $this->view('users', [
+            'rows' => $data,
+        ]);
     }
 }

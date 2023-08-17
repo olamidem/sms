@@ -5,6 +5,7 @@ class Signup extends Controller
     // Function to handle the signup page
     function index()
     {
+        $mode = isset($_GET['mode']) ? $_GET['mode'] : '';
         $errors = array();
 
         // Check if the signup form is submitted
@@ -22,17 +23,19 @@ class Signup extends Controller
                 // Insert the user data into the database using the User model's insert method
                 $user->insert($_POST);
 
-                // Redirect the user to the login page after successful registration
-                $this->redirect('users');
+                $redirect = $mode == 'students' ? 'students' : 'users';
+                $this->redirect($redirect);
             } else {
                 // Validation failed, get the errors array from the User model
                 $errors = $user->errors;
             }
         }
 
-        // Load the signup view and pass the errors array to display any validation errors
+
+
         $this->view('signup', [
             'errors' => $errors,
+            'mode' => $mode,
         ]);
     }
 }

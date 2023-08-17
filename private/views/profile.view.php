@@ -43,6 +43,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="px-2 py-1 text-gray-500 font-bold">Rank:</td>
+                            <td class="px-2 py-1 capitalize">
+                                <?= esc(str_replace("_", " ", $row->rank)) ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td class="px-2 py-1 text-gray-500 font-bold">Date Created:</td>
                             <td class="px-2 py-1">
                                 <?= esc(get_date($row->date)) ?>

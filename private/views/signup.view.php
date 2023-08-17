@@ -85,19 +85,33 @@
                     Rank
                 </label>
                 <div class="relative">
-                    <select name="rank" id="rank" required
-                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
-                        id="grid-rank">
-                        <option <?= get_select('rank', '') ?> value="">Select Rank</option>
-                        <option <?= get_select('rank', 'student') ?> value="student">Student</option>
-                        <option <?= get_select('rank', 'reception') ?> value="reception">Reception</option>
-                        <option <?= get_select('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
-                        <option <?= get_select('rank', 'admin') ?> value="admin">Admin</option>
 
-                        <?php if (Auth::getRank() == 'super_admin'): ?>
-                            <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
-                        <?php endif; ?>
-                    </select>
+                    <?php if ($mode == 'students'): ?>
+                        <select name="rank" id="rank" required
+                            class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                            id="grid-rank">
+
+                            <option <?= get_select('rank', 'student') ?> value="student">Student</option>
+
+                        </select>
+                    <?php else: ?>
+
+                        <select name="rank" id="rank" required
+                            class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                            id="grid-rank">
+                            <option <?= get_select('rank', '') ?> value="">Select Rank</option>
+                            <option <?= get_select('rank', 'student') ?> value="student">Student</option>
+                            <option <?= get_select('rank', 'reception') ?> value="reception">Reception</option>
+                            <option <?= get_select('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
+                            <option <?= get_select('rank', 'admin') ?> value="admin">Admin</option>
+
+                            <?php if (Auth::getRank() == 'super_admin'): ?>
+                                <option <?= get_select('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
+                            <?php endif; ?>
+                        </select>
+
+                    <?php endif; ?>
+
 
                 </div>
             </div>
@@ -143,11 +157,20 @@
             <button type="submit"
                 class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-indigo-500 bg-indigo-600  ">ADD
                 USER</button>
+            <?php if ($mode == 'students'): ?>
 
-            <a href="<?= ROOT ?>/users"
-                class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">
-                <button type="button">CANCEL</button>
-            </a>
+                <a href="<?= ROOT ?>/students"
+                    class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">
+                    <button type="button">CANCEL</button>
+                </a>
+
+            <?php else: ?>
+                <a href="<?= ROOT ?>/users"
+                    class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 hover:bg-red-500 bg-red-600  ">
+                    <button type="button">CANCEL</button>
+                </a>
+            <?php endif; ?>
+
         </div>
     </form>
 </div>
